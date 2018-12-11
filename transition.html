@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #child0 {
+      max-height: 0;
+      /* overflow: hidden; */
+      background-color: #dedede;
+      transition: max-height 1s ease;
+    }
+
+    #child40 {
+      height: 40px;
+      overflow: hidden;
+      background-color: #dedede;
+      transition: height 1s ease;
+    }
+
+    #parent40:hover #child40 {
+      height: auto;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+
+    #menu #list {
+      max-height: 0;
+      transition: max-height 0.5s ease-out;
+      overflow: hidden;
+      background: #d5d5d5;
+    }
+
+    #menu:hover #list {
+      max-height: 500px;
+      transition: max-height 0.5s ease-in;
+    }
+
+    .food {
+      background-color: #eee;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.26s ease;
+    }
+
+    p:hover~ul {
+      transform: scaleY(1);
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var ph = document.getElementById('ph');
+      ph.onclick = function () {
+        var child0 = document.getElementById('child0');
+        var old = child0.style.maxHeight;
+        child0.style.maxHeight = old === '200px' ? '0px' : '200px';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <!-- <div id="menu">
+    <a>hover me</a>
+    <ul id="list">
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+  </div> -->
+
+  <p>Here (scaleY(1))</p>
+  <ul class="food">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+  The only difference between the two snippets of CSS is one has height: 0, the other height: 40.
+  <hr>
+  <div id="parent0">
+    <h1 id="ph">Hover me (height: 0)</h1>
+    <div id="child0">
+      Some content
+      <br>Some content
+      <br>Some content
+      <br>Some content
+      <br>Some content
+      <br>Some content
+      <br>
+    </div>
+  </div>
+  <hr>
+  <div id="parent40">
+    <h1>Hover me (height: 40)</h1>
+    <div id="child40">Some content
+      <br>Some content
+      <br>Some content
+      <br>Some content
+      <br>Some content
+      <br>Some content
+      <br>
+    </div>
+  </div>
+</body>
+
+</html>
