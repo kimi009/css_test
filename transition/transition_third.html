@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .collapsible-wrapper {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .collapsible-wrapper:after {
+      content: '';
+      height: 50px;
+      transition: height 0.3s linear, max-height 0s 0.3s linear;
+      max-height: 0px;
+    }
+
+    .collapsible {
+      transition: margin-bottom 0.3s cubic-bezier(0, 0, 0, 1);
+      margin-bottom: 0;
+      max-height: 1000000px;
+    }
+
+    .collapsible-wrapper.collapsed>.collapsible {
+      margin-bottom: -2000px;
+      transition: margin-bottom 0.3s cubic-bezier(1, 0, 1, 1),
+      visibility 0s 0.3s, max-height 0s 0.3s;
+      visibility: hidden;
+      max-height: 0;
+    }
+
+    .collapsible-wrapper.collapsed:after {
+      height: 0;
+      transition: height 0.3s linear;
+      max-height: 50px;
+    }
+
+    /* END of the collapsible implementation; the stuff below
+   is just styling for this demo */
+
+    #container {
+      display: flex;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+
+    .menu {
+      border: 1px solid #ccc;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      margin: 20px;
+
+
+    }
+
+    .menu-item {
+      display: block;
+      background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+      margin: 0;
+      padding: 1em;
+      line-height: 1.3;
+    }
+
+    .collapsible .menu-item {
+      border-left: 2px solid #888;
+      border-right: 2px solid #888;
+      background: linear-gradient(to bottom, #eee 0%, #ddd 100%);
+    }
+
+    .menu-item.toggler {
+      background: linear-gradient(to bottom, #aaa 0%, #888 100%);
+      color: white;
+      cursor: pointer;
+    }
+
+    .menu-item.toggler:before {
+      content: '';
+      display: block;
+      border-left: 8px solid white;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      width: 0;
+      height: 0;
+      float: right;
+      transition: transform 0.3s ease-out;
+    }
+
+    .menu-item.toggler.toggled:before {
+      transform: rotate(90deg);
+    }
+
+    body {
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+
+    *,
+    *:after {
+      box-sizing: border-box;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $(".toggler").click(function () {
+        $(this).next().toggleClass("collapsed");
+        $(this).toggleClass("toggled"); // this just rotates the expander arrow
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+
+  <div id="container">
+    <div class="menu">
+      <div class="menu-item">Something involving a holodeck</div>
+      <div class="menu-item">Send an away team</div>
+      <div class="menu-item toggler">Advanced solutions</div>
+      <div class="collapsible-wrapper collapsed">
+        <div class="collapsible">
+          <div class="menu-item">Separate saucer</div>
+          <div class="menu-item">Send an away team that includes the captain (despite Riker's protest)</div>
+          <div class="menu-item">Ask Worf</div>
+          <div class="menu-item">Something involving Wesley, the 19th century, and a holodeck</div>
+          <div class="menu-item">Ask Q for help</div>
+        </div>
+      </div>
+      <div class="menu-item">Sweet-talk the alien aggressor</div>
+      <div class="menu-item">Re-route power from auxiliary systems</div>
+    </div>
+
+    <div class="menu">
+      <div class="menu-item">Something involving a holodeck</div>
+      <div class="menu-item">Send an away team</div>
+      <div class="menu-item toggler">Advanced solutions</div>
+      <div class="collapsible-wrapper collapsed">
+        <div class="collapsible">
+          <div class="menu-item">Separate saucer</div>
+          <div class="menu-item">Send an away team that includes the captain (despite Riker's protest)</div>
+        </div>
+      </div>
+      <div class="menu-item">Sweet-talk the alien aggressor</div>
+      <div class="menu-item">Re-route power from auxiliary systems</div>
+    </div>
+
+    <div class="menu">
+      <div class="menu-item">Something involving a holodeck</div>
+      <div class="menu-item">Send an away team</div>
+      <div class="menu-item toggler">Advanced solutions</div>
+      <div class="collapsible-wrapper collapsed">
+        <div class="collapsible">
+          <div class="menu-item">Separate saucer</div>
+          <div class="menu-item">Send an away team that includes the captain (despite Riker's protest)</div>
+          <div class="menu-item">Ask Worf</div>
+          <div class="menu-item">Something involving Wesley, the 19th century, and a holodeck</div>
+          <div class="menu-item">Ask Q for help</div>
+          <div class="menu-item">Separate saucer</div>
+          <div class="menu-item">Send an away team that includes the captain (despite Riker's protest)</div>
+          <div class="menu-item">Ask Worf</div>
+          <div class="menu-item">Something involving Wesley, the 19th century, and a holodeck</div>
+          <div class="menu-item">Ask Q for help</div>
+        </div>
+      </div>
+      <div class="menu-item">Sweet-talk the alien aggressor</div>
+      <div class="menu-item">Re-route power from auxiliary systems</div>
+    </div>
+
+  </div>
+</body>
+
+</html>

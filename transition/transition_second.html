@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* final display */
+
+    #menu #list {
+      margin: .5em 1em;
+      padding: 1em;
+    }
+
+    /* hide */
+
+    #menu:not(:hover) #list {
+      font-size: 0;
+      margin: 0;
+      opacity: 0;
+      padding: 0;
+      /* fade out, then shrink */
+      transition: opacity .25s,
+      font-size .5s .25s,
+      margin .5s .25s,
+      padding .5s .25s;
+    }
+
+    /* reveal */
+
+    #menu:hover #list {
+      /* unshrink, then fade in */
+      transition: font-size .25s,
+      margin .25s,
+      padding .25s,
+      opacity .5s .25s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="menu">
+    <b>hover me</b>
+    <ul id="list">
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+  </div>
+
+  <p>Another paragraph...</p>
+</body>
+
+</html>

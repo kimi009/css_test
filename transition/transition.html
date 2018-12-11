@@ -51,6 +51,9 @@
     p:hover~ul {
       transform: scaleY(1);
     }
+    #link{
+      color: #09f;
+    }
   </style>
   <script>
     window.onload = function () {
@@ -60,11 +63,17 @@
         var old = child0.style.maxHeight;
         child0.style.maxHeight = old === '200px' ? '0px' : '200px';
       }
+      var h1 = document.getElementById('link')
+      h1.onclick = function () {
+        window.location.href =
+          'https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css'
+      }
     }
   </script>
 </head>
 
 <body>
+  <h1 id="link">点击查看 高度动画</h1>
   <!-- <div id="menu">
     <a>hover me</a>
     <ul id="list">
