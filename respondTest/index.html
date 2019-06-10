@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.slim.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <p>This is a paragraph.</p>
+    <button class="btn1">Toggle</button>
+    <input type="text" id="filter" />
+    <ul class="cars">
+      <li data-models="mustang,f150,fusion">ford</li>
+      <li data-models="custang,fsdf,ds">ford</li>
+      <li data-models="dustang,3232,iyi">ford</li>
+      <li data-models="vustang,hffg,jghj">ford</li>
+      <li data-models="yustang,fsf,232">ford</li>
+    </ul>
+
+    <script>
+      $('.btn1').click(function() {
+        $('p').toggle(1000)
+      })
+      $('#filter').on('keyup', function() {
+        var keyword = $(this)
+          .val()
+          .toLowerCase()
+        $('p').toggle(5000)
+        $('.cars>li').each(function() {
+          $(this).toggle(1000)
+        })
+      })
+    </script>
+  </body>
+</html>

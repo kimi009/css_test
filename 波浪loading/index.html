@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>大波浪</title>
+    <style>
+      .loading {
+        display: flex;
+        width: 100px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50px, -25px);
+      }
+      .loading span {
+        width: 10px;
+        height: 50px;
+        background-color: #308dec;
+        /* transform: scaleY(0.01) translateX(-100px); */
+        animation: load-ani 1.5s infinite ease-in-out;
+        animation-delay: calc(var(--n) * 0.038s);
+      }
+      @keyframes load-ani {
+        0%,
+        100% {
+          transform: scaleY(0.01) translateX(-10px);
+        }
+        15% {
+          transform: scaleY(1.1) translateX(20px);
+        }
+        90%,
+        100% {
+          background-color: #aed4fb;
+        }
+      }
+      .loading span:nth-child(1) {
+        --n: 1;
+      }
+      .loading span:nth-child(2) {
+        --n: 2;
+      }
+      .loading span:nth-child(3) {
+        --n: 3;
+      }
+      .loading span:nth-child(4) {
+        --n: 4;
+      }
+      .loading span:nth-child(5) {
+        --n: 5;
+      }
+      .loading span:nth-child(6) {
+        --n: 6;
+      }
+      .loading span:nth-child(7) {
+        --n: 7;
+      }
+      .loading span:nth-child(8) {
+        --n: 8;
+      }
+      .loading span:nth-child(9) {
+        --n: 9;
+      }
+      .loading span:nth-child(10) {
+        --n: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>
