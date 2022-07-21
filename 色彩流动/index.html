@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flow-colorful{
+      font-size: 120px;
+      --webkit-background-clip: text;
+      --webkit-text-fill-color: transparent;
+      background-image: linear-gradient(to right,red,orange,yellow,green,purple,fuchsia);
+      animation: hue 6s linear infinite;
+    }
+    @keyframes hue {
+      from{
+        filter: hue-rotate(0deg);
+      }
+      to{
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2 class="flow-colorful">
+    我是一个兵
+  </h2>
+</body>
+</html>
