@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --clr: #e4e6e9;
+  --bg: #ffffff;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #50c2c8;
+}
+
+.folder_tab {
+  width: 400px;
+  position: relative;
+}
+.top {
+  position: relative;
+}
+.top_left {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 200px;
+  height: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--cl);
+}
+
+.top_left.active {
+  top: 0;
+  background-color: var(--bg);
+}
+
+.top_right {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 200px;
+  height: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--bg);
+}
+
+.top_right.active {
+  transform: translateY(-10px);
+}
+
+.mid {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+}
+
+.mid_left {
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  background-color: var(--clr);
+  border-top-left-radius: 10px;
+}
+.mid_left.active {
+  background-color: var(--bg);
+  border-top-left-radius: 0px;
+}
+
+.mid_left.hidden {
+  background-color: var(--bg);
+  border-top-left-radius: 10px;
+}
+
+.mid_left_o {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 40px;
+  background-color: var(--bg);
+  border-bottom-right-radius: 40px;
+}
+.mid_left_o.active {
+  background-color: var(--clr);
+  border-bottom-right-radius: 40px;
+}
+.mid_left_o.hidden {
+  background-color: var(--clr);
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 40px;
+}
+
+.mid_right {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  height: 40px;
+  background-color: var(--bg);
+  border-top-right-radius: 10px;
+}
+.mid_right.active {
+  background-color: var(--cl);
+  border-top-right-radius: 10px;
+}
+
+.mid_right_o {
+  position: absolute;
+  left: 0px;
+  width: 200px;
+  height: 40px;
+  border-bottom-left-radius: 40px;
+  border-top-right-radius: 10px;
+  background-color: var(--clr);
+}
+.mid_right_o.active {
+  background-color: var(--bg);
+  border-top-right-radius: 0px;
+}
+.bottom {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background-color: var(--bg);
+  box-shadow: 0 -4px 3px 0 var(--bg);
+}
+
+.bottom.left {
+  border-top-left-radius: 10px;
+}
+.bottom.right {
+  border-top-right-radius: 10px;
+}
